@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Mini Task Manager</h1>
+      <p>Bài kiểm tra thực hành HTML, CSS, JavaScript</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Form thêm công việc -->
+    <section class="form-section">
+      <h2>Thêm công việc mới</h2>
+      <form id="task-form">
+        <div class="form-group">
+          <label for="title">Tên công việc <span class="required">*</span></label>
+          <input type="text" id="title" name="title" placeholder="Nhập tên công việc..." required>
+          <span class="error-msg" id="title-error"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dueDate">Hạn hoàn thành</label>
+            <input type="date" id="dueDate" name="dueDate">
+          </div>
+
+          <div class="form-group">
+            <label for="priority">Mức ưu tiên</label>
+            <select id="priority" name="priority">
+              <option value="Cao">Cao</option>
+              <option value="Trung bình" selected>Trung bình</option>
+              <option value="Thấp">Thấp</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Thêm công việc</button>
+      </form>
+    </section>
+
+    <!-- Tìm kiếm + Lọc -->
+    <section class="filter-section">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Tìm kiếm theo tên công việc...">
+      </div>
+
+      <div class="filter-buttons">
+        <button class="btn-filter active" data-filter="all">Tất cả</button>
+        <button class="btn-filter" data-filter="pending">Chưa hoàn thành</button>
+        <button class="btn-filter" data-filter="done">Đã hoàn thành</button>
+      </div>
+    </section>
+
+    <!-- Danh sách công việc -->
+    <section class="list-section">
+      <h2>Danh sách công việc <span id="task-count">(0)</span></h2>
+      <ul id="task-list" class="task-list">
+        <!-- Các công việc sẽ được render bằng JavaScript -->
+      </ul>
+      <p id="empty-message" class="empty-message hidden">Không có công việc nào phù hợp.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Sinh viên: Nguyễn Văn A  |  MSSV: 123456789  |  Lớp: CNTT-K65
+    </div>
+  </footer>
+</body>
+</html>
